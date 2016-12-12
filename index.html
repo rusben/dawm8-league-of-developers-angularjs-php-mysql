@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="LeagueOfDevelopersApp" xmlns="http://www.w3.org/1999/html" >
+<head lang="en">
+	<!--General-->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" HREF="images/companyLogo.jpg"/>
+	<title>LeagueOfDevelopers</title>
+	<meta name="description" content="DAW-M08">
+	<meta name="author" content="Rubén Arroyo">
+
+	<!--css-->
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<!-- Frameworks-->
+	<!-- jQuery-->
+	<script src="vendors/jquery/jquery-3.1.1.min.js" type="text/javascript" xml:space="preserve"></script>
+
+	<!--Angular-->
+	<script src="vendors/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+
+	<!--Bootstrap-->
+	<!-- <link href="vendors/bootstrap/bootstrap.css" rel="stylesheet" type="text/css"/> -->
+
+	<!-- app -->
+	<script src="js/controller/index.js" type="text/javascript" xml:space="preserve"></script>
+	<script src="js/controller/players.js" type="text/javascript" xml:space="preserve"></script>
+</head>
+<body>
+	<div id="main">
+		<div id="slider">
+			<h1>LeagueOfDevelopers</h1>
+			<h2>Join the greatest community of developers in l'Hospitalet!</h2>
+		</div>
+
+		<div ng-controller="MainController as MainCtrl" id="container">
+			<a ng-click="action='players'" href="#" id="players" >Players</a>
+			<a ng-click="action='teams'" href="#" id="teams">Teams</a>
+		    <a ng-click="action='calendar'" href="#" id="calendar">Calendar</a>
+		    <a ng-click="action='statistics'" href="#" id="statistics">Statistics</a>
+
+			<div id="tabs" class="">
+				<div ng-show="action=='players'" id="tab-players"  class="">
+					<players-view></players-view>
+				</div>
+				<div ng-show="action=='teams'" id="tab-teams">
+					<teams-view></teams-view>
+				</div>
+				
+				<div ng-show="action=='calendar'" id="tab-calendar">
+					<calendar-view></teams-view>
+				</div>
+
+				<div ng-show="action=='statistics'" id="tab-statistics">
+					<statistics-view></statistics-view>
+				</div>
+				<button id="calculate" ng-click="MainCtrl.go()">Go</button>
+			
+		    </div> <!-- /tabs -->
+
+		</div> <!-- /container -->
+
+		<footer>
+			<p>© 2016 DAW-M08, Institut Provençana.</p>
+		</footer>
+	</div>
+	
+
+
+</body>
+</html>
